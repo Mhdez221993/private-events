@@ -1,4 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
+  def show
+  end
 
 private
 
