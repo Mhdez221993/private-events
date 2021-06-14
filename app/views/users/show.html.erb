@@ -1,7 +1,30 @@
+<h3>Event User Created</h3>
 <% @event.each do |event| %>
     <ul>
         <li><%= event.title %></li>
         <li><%= event.description %></li>
         <li><%= event.date %></li>
     </ul>
+<% end %>
+
+<h3>Event User Attended</h3>
+<% @user.attendeds.each do |event| %>
+    <% if event.date <  Time.now %>
+        <ul>
+            <li><%= event.title %></li>
+            <li><%= event.description %></li>
+            <li><%= event.date %></li>
+        </ul>
+    <% end %>
+<% end %>
+
+<h3>Event User will Attent</h3>
+<% @user.attendeds.each do |event| %>
+    <% if event.date >  Time.now %>
+        <ul>
+            <li><%= event.title %></li>
+            <li><%= event.description %></li>
+            <li><%= event.date %></li>
+        </ul>
+    <% end %>
 <% end %>
