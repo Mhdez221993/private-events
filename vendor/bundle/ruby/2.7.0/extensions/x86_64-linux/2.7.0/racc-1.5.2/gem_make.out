@@ -1,0 +1,16 @@
+current directory: /home/ja/myProjects/rails/private-events/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+/home/ja/.rbenv/versions/2.7.2/bin/ruby -I /home/ja/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210615-14913-xz1hl7.rb extconf.rb
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /home/ja/myProjects/rails/private-events/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /home/ja/myProjects/rails/private-events/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/ja/myProjects/rails/private-events/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20210615-14913-14lk9b8/racc
