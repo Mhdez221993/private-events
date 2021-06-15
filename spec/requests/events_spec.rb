@@ -15,17 +15,17 @@ require 'rails_helper'
 RSpec.describe '/events', type: :request do
   # Event. As you add validations to Event, be sure to
   # adjust the attributes here as well.
-  
+
   @creator = User.create(name: 'John Doe', email: 'john@doe', password: '000000', password_confirmation: '000000')
-  
+
   let(:valid_attributes) do
-    #skip('Add a hash of attributes valid for your model')
-    {title: "Test event", description: "Test event's description", date: Date.today, creator_id: 1}
+    # skip('Add a hash of attributes valid for your model')
+    { title: 'Test event', description: "Test event's description", date: Date.today, creator_id: 1 }
   end
 
   let(:invalid_attributes) do
     # skip('Add a hash of attributes invalid for your model')
-    {title: nil, description: nil, date: nil, creator_id: nil}
+    { title: nil, description: nil, date: nil, creator_id: nil }
   end
 
   describe 'GET /index' do
@@ -58,7 +58,7 @@ RSpec.describe '/events', type: :request do
         expect do
           post events_url, params: { event: valid_attributes }
         end.to change(Event, :count).by(0)
-      end      
+      end
     end
 
     context 'with invalid parameters' do
@@ -66,14 +66,14 @@ RSpec.describe '/events', type: :request do
         expect do
           post events_url, params: { event: invalid_attributes }
         end.to change(Event, :count).by(0)
-      end   
+      end
     end
   end
-  
+
   describe 'PATCH /update' do
     context 'with valid parameters' do
       let(:new_attributes) do
-        {title: "Test event", description: "Test event's description", date: Date.today, creator_id: 1}
+        { title: 'Test event', description: "Test event's description", date: Date.today, creator_id: 1 }
       end
 
       it 'redirects to the event' do
@@ -92,13 +92,13 @@ RSpec.describe '/events', type: :request do
       end
     end
   end
-  
+
   describe 'DELETE /destroy' do
     it 'destroys the requested event' do
       event = Event.create! valid_attributes
       expect do
         delete event_url(event)
       end.to change(Event, :count).by(0)
-    end    
+    end
   end
 end

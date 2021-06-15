@@ -5,10 +5,10 @@ describe 'User signs up', type: :system do
   let(:password) { '000000' }
   let(:password_confirmation) { '000000' }
   let(:name) { 'john' }
-  
+
   it 'signs up user with valid data' do
     visit new_user_registration_path
-    fill_in 'Email', with: "thisisnot@taken"
+    fill_in 'Email', with: 'thisisnot@taken'
     fill_in 'Password', with: password
     fill_in 'Name', with: name
     fill_in 'Password confirmation', with: password_confirmation
