@@ -12,6 +12,11 @@
 - Node.js
 - Yarn
 
+### Gems needed
+
+- Rails Rspec
+- Devise
+
 ## Getting Started
 ### To get a local copy run the following steps:
 
@@ -21,20 +26,13 @@
 - Open the folder with your code editor
 - Run `bundle install` to install all dependecies
 - Run `yarn install` to install yarn
+- Run `rails webpacker:install`
 - Run `rails db:migrate` to create the database tables
 - Run `rails server` to open the local server
 - You can folow the nav links or use the follow paths:
 - Use this [link](http://localhost:3000/users/sign_up) to create a new user account
 - Use this [link](http://localhost:3000/posts) to check the posts
 - Use this [link](http://localhost:3000/posts/new) to create a new post
-
-### Gems needed
-- Rails Rspec
-- Devise
-
-#### Installing 
-Run `bundle install` in root folder.
-Run `yarn` and/or `rails webpacker:install`
 
 ### Rspec
 To run the tests, run `rspec` command in root folder.
