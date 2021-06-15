@@ -32,11 +32,12 @@
 - Rails Rspec
 - Devise
 
-#### Installing gems
+#### Installing 
 Run `bundle install` in root folder.
+Run `yarn` and/or `rails webpacker:install`
 
 ### Rspec
-To run the tests, run `rspec` command in rood folder.
+To run the tests, run `rspec` command in root folder.
 
 ## Authors
 👤 **Moises Hernandez Coronado** 
