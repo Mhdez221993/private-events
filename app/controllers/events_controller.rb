@@ -1,10 +1,13 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /events or /events.json
   def index
     @events = Event.all
+    @future_events = Event.future_events
+    @past_events = Event.past_events
   end
 
   # GET /events/1 or /events/1.json
@@ -56,7 +59,12 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  def correct_user
+    @event = current_user.events.find_by(id: params[:id])
+    redirect_to root_path, notice: "Not Authorized To Change This Event" if @event.nil?
+  end
+  
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -68,4 +76,5 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :description, :date)
   end
+
 end

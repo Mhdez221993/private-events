@@ -8,17 +8,15 @@
   </thead>
 
   <tbody>
-    <% @events.future_events.each do |event| %>
+    <% @future_events.each do |event| %>
       <tr>
         <td><%= event.title %></td>
         <td><%= event.description %></td>
         <td><%= event.date %></td>
-        <% if user_signed_in? %>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td> <%= button_to 'Attend', {:controller => "attended_events", :action => "create", :event_id => event.id, :user_id=> current_user.id} , :method=>:post %> </td>
-        <% end %>
+        <td> <%= button_to 'Attend', {:controller => "attended_events", :action => "create", :event_id => event.id, :user_id=> current_user } , :method=>:post %> </td>
         </tr>
     <% end %>
   </tbody>
@@ -35,16 +33,14 @@
   </thead>
 
   <tbody>
-    <% @events.past_events.each do |event| %>
+    <% @past_events.each do |event| %>
       <tr>
         <td><%= event.title %></td>
         <td><%= event.description %></td>
         <td><%= event.date %></td>
-        <% if user_signed_in? %>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
         </tr>
     <% end %>
   </tbody>
