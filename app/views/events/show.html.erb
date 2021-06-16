@@ -6,13 +6,22 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>
+    Description:
+  </strong>
   <%= @event.description %>
 </p>
 
 <p>
   <strong>Date:</strong>
   <%= @event.date %>
+</p>
+
+<p>
+  <strong>Guests:</strong>
+  <% @event.visitors.each do |x| %>
+    <%= x.name %>
+  <%end%>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
